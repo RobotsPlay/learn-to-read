@@ -1,0 +1,57 @@
+* {
+    box-sizing: border-box;
+}
+
+.panelset {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: stretch;
+}
+
+.panelset-vertical {
+    flex-direction: column;
+}
+
+.panel {
+    background: #f3f3f3;
+    width: auto;
+    height: 100%;
+    position: relative;
+    padding-right: 6px;	
+}
+
+.panelset-vertical .panel {
+    height: auto;
+    width: 100%;
+    padding-right: 0;
+    padding-bottom: 6px;
+}
+
+.panel-handle {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 6px;
+    height: 100%;
+    background: #999;
+    cursor: ew-resize;
+}
+
+.panelset-vertical .panel-handle {
+    top: auto;
+    right: auto;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 6px;
+    cursor: ns-resize;
+}
+
+.panel:last-child {
+
+}
+
+.panel:last-child .panel-handle {
+    display: none;
+}
