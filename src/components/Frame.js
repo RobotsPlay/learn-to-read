@@ -1,9 +1,9 @@
 import React from 'react';
 import FrameStyles from '../styles/FrameStyles';
 
-const Frame = ({frame}) => {
+const Frame = ({frame, index, className = ''}) => {
     return (
-        <FrameStyles>
+        <FrameStyles className={className} style={{backgroundColor: frame.background}}>
              {frame.word}
         </FrameStyles>
     )

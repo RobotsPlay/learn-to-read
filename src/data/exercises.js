@@ -1,10 +1,20 @@
 const exerciseData = {
     frames: [
         {
-            word: 'cat'
+            word: 'cat',
+            background: 'plum'
         },
         {
-            word: 'dog'
+            word: 'dog',
+            background: 'paleturquoise'
+        },
+        {
+            word: 'top',
+            background: 'salmon'
+        },
+        {
+            word: 'fan',
+            background: 'khaki'
         }
     ]
 };
