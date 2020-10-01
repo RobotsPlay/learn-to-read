@@ -7,10 +7,14 @@ const Word = ({word}) => {
         let utterance = new SpeechSynthesisUtterance(word);
         let synth = window.speechSynthesis;
 
+        if(synth.speaking) {
+            return;
+        } 
+
         window.setTimeout(() => {
             utterance.voice = synth.getVoices()[1];
             synth.speak(utterance);
-        },  0);   
+        },  50);   
     }
 
     return (

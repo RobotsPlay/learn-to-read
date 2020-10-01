@@ -1,10 +1,10 @@
 import styled from 'styled-components'
 
 const WordStyles = styled.div`
-    font-family: 'Alfa Slab One', sans-serif;
-    font-size: 10.2rem;
+    font-family: 'Lalezar', sans-serif;
+    font-size: 14.2rem;
     text-transform: uppercase;
-    letter-spacing: .6rem;
+    letter-spacing: .2rem;
 `;
 
 export default WordStyles;
