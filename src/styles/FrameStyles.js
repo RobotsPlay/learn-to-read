@@ -15,6 +15,13 @@ const FrameStyles = styled.div`
     &.active {
         z-index: 2;
     }
+
+    .word {
+        font-family: 'Alfa Slab One', sans-serif;
+        font-size: 10.2rem;
+        text-transform: uppercase;
+        letter-spacing: .6rem;
+    }
 `;
 
 export default FrameStyles;
