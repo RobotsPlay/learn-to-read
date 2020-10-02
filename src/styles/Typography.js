@@ -31,6 +31,11 @@ const Typography = createGlobalStyle`
     font-size: 2rem;
     line-height: 1.5;
   }
+
+  input {
+    font-family: Roboto, -apple-system, BlinkMacSystemFont, 'Segoe UI', Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-weight: 300;
+  }
 `
 
 export default Typography
