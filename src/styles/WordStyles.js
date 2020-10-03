@@ -12,7 +12,8 @@ const WordStyles = styled.div`
     }
 
     .letter-input {
-        border: 6px dashed rgba(0, 0, 0, .5);
+        border: .6rem dashed rgba(0, 0, 0, .5);
+        border-radius: 3.5rem;
         background: none;
         font-size: 14.2rem;
         text-transform: uppercase;

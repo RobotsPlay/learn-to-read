@@ -2,7 +2,7 @@ import React, {useState} from 'react';
 import { BsFillVolumeUpFill } from "react-icons/bs";
 import WordStyles from '../styles/WordStyles';
 
-const Word = ({word, checkLetter}) => {
+const Word = ({word, checkLetter, scoreIndex = 0,  updateScore = () => {}}) => {
     const [responses, setResponses] = useState({});
     const [letterValidation, setLetteValidation] = useState({});
 
@@ -19,12 +19,14 @@ const Word = ({word, checkLetter}) => {
     const updateLetterValidation = (index, response) => {
         if(response) {
             if(response === checkLetter.toUpperCase()) {
+                updateScore(scoreIndex, 'correct');
                 return 'correct';
             }
-
+            updateScore(scoreIndex, 'incorrect');
             return 'incorrect';
         }
 
+        updateScore(scoreIndex, false);
         return 'incomplete';
     }
 
