@@ -39,6 +39,11 @@ const ExerciseStyles = styled.div`
             transition: font-size .2s ease-in-out, background-color .2s ease-in-out;
             cursor: pointer;
             border-radius: .4rem;
+
+        @media (max-width: 767px) {
+            margin: 0 .2rem;
+        }
+
         }
 
         .active {

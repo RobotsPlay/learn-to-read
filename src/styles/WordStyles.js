@@ -9,6 +9,10 @@ const WordStyles = styled.div`
         display: flex;
         justify-content: space-around;
         margin: 1.6rem 0;
+
+        @media (max-width: 767px) {
+            font-size: 6rem;
+        }
     }
 
     .letter-input {
@@ -23,6 +27,12 @@ const WordStyles = styled.div`
         max-width: 16rem;
         transform: translateY(-10px);
         transition: border-color .15s ease-in-out;
+
+        @media (max-width: 767px) {
+            font-size: 6rem;
+            max-width: 8rem;
+            border-radius: 1.5rem;
+        }
 
         &:first-child {
             margin-left: 0;

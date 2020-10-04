@@ -6,19 +6,39 @@ const exerciseData = {
             background: 'plum'
         },
         {
+            word: 'moon',
+            checkLetter: 'm',
+            background: 'salmon'
+        },
+        {
+            word: 'sun',
+            checkLetter: 'u',
+            background: 'palegoldenrod'
+        },
+        {
             word: 'dog',
             checkLetter: 'o',
             background: 'paleturquoise'
         },
         {
-            word: 'top',
-            checkLetter: 'o',
-            background: 'salmon'
+            word: 'bird',
+            checkLetter: 'b',
+            background: 'lemonchiffon'
         },
         {
-            word: 'fan',
-            checkLetter: 'a',
-            background: 'khaki'
+            word: 'candy',
+            checkLetter: 'c',
+            background: 'palegreen'
+        },
+        {
+            word: 'cup',
+            checkLetter: 'u',
+            background: 'powderblue'
+        },
+        {
+            word: 'bear',
+            checkLetter: 'b',
+            background: 'lightpink'
         }
     ]
 };

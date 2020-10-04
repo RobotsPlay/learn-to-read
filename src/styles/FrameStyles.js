@@ -9,11 +9,31 @@ const FrameStyles = styled.div`
     background-color: lightgray;
     z-index: 1;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
+    overflow: hidden;
 
     &.active {
         z-index: 2;
+    }
+
+    .frame-image {
+        width: 40rem;
+        max-width: 80%;
+        margin-bottom: 8rem;
+        pointer-events: none;
+
+        @media (max-width: 767px) {
+            width: 20rem;
+            margin-bottom: 4rem;
+        }
+
+
+        img {
+            display: block;
+            width: 100%;
+        }
     }
 `;
 

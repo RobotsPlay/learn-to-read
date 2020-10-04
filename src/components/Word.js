@@ -32,6 +32,7 @@ const Word = ({word, checkLetter, scoreIndex = 0,  updateScore = () => {}}) => {
 
     const playWordSound = () => {
         let utterance = new SpeechSynthesisUtterance(word);
+        utterance.rate = .5;
         let synth = window.speechSynthesis;
 
         if(synth.speaking) {
