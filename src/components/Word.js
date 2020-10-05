@@ -8,10 +8,13 @@ const Word = ({
     responseLetter, 
     validClass = 'incomplete'}) => {
     
-    const playWordSound = () => {
+    const playWordSound = (e) => {
         let utterance = new SpeechSynthesisUtterance(word);
         utterance.rate = .5;
         let synth = window.speechSynthesis;
+
+        e.target.blur();
+        console.log(e.target)
 
         if(synth.speaking) {
             return;
@@ -20,7 +23,7 @@ const Word = ({
         window.setTimeout(() => {
             utterance.voice = synth.getVoices()[1];
             synth.speak(utterance);
-        },  50);   
+        },  50); 
     }
 
     return (
@@ -35,13 +38,13 @@ const Word = ({
                         )
                     )
                 })}
-            </div>
 
-            {SpeechSynthesisUtterance ? (
-                <button type="button" onClick={playWordSound}>
-                    <BsFillVolumeUpFill />    
-                </button>
-            ) : null}
+                {SpeechSynthesisUtterance ? (
+                    <button className="speech-button" type="button" onClick={playWordSound}>
+                        <BsFillVolumeUpFill />    
+                    </button>
+                ) : null}
+            </div>
         </WordStyles>
     )
 }

@@ -3,6 +3,7 @@ import ExerciseStyles from '../styles/ExerciseStyles';
 import Frame from './Frame';
 import {AiTwotoneQuestionCircle, AiFillCheckCircle, AiFillCloseCircle} from 'react-icons/ai'
 import KeyboardEventHandler from 'react-keyboard-event-handler';
+import MobileKeyboard from './MobileKeyboard';
 
 const Exercise = ({exerciseData}) => {
     const [currentSlide, setCurrentSlide] = useState(0);
@@ -45,7 +46,7 @@ const Exercise = ({exerciseData}) => {
         console.log('Submitted');
     }
 
-    const onKeyPress = (key, e) => {
+    const onKeyPress = (key) => {
         let response = responses[currentSlide] || {};
         let responsesClone = responses.slice();
 
@@ -67,7 +68,7 @@ const Exercise = ({exerciseData}) => {
     }
 
     return (
-        <ExerciseStyles>
+        <ExerciseStyles  style={{backgroundColor: exerciseData.frames[currentSlide].background}}>
             <KeyboardEventHandler
                 handleKeys={['alphabetic', 'del', 'backspace']}
                 onKeyEvent={onKeyPress} 
@@ -83,6 +84,8 @@ const Exercise = ({exerciseData}) => {
                     />
                 ))} 
             </div>
+
+            <MobileKeyboard onPress={onKeyPress} />
 
             <div className="scores">
                 {exerciseData.frames.map((frame, i) => (

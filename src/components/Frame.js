@@ -6,7 +6,7 @@ const Frame = ({frame, response = {}, className = '', updateScore = () => {}}) =
     
 
     return (
-        <FrameStyles className={className} style={{backgroundColor: frame.background}}>
+        <FrameStyles className={className}>
             <div className="frame-image">
                 <img src={require(`../assets/images/${frame.word}.svg`)} alt={`Illustration of a ${frame.word}`}/>
             </div>

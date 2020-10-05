@@ -1,14 +1,14 @@
 import styled from 'styled-components'
 
 const ExerciseStyles = styled.div`
+    position: fixed;
     width: 100vw;
-    height: 100vh;
+    height: 100%;
     display: grid;
     grid-template-rows: 1fr auto auto;
 
     .frames {
         position: relative;
-        z-index: 1;
     }
 
     .controls {
@@ -23,9 +23,6 @@ const ExerciseStyles = styled.div`
         justify-content: center;
         align-items: center;
         padding: 1.6rem;
-        transform: translateY(-100%);
-        z-index: 2;
-        margin-bottom: -4.4rem;
 
         &-dot {
             width: 30px;

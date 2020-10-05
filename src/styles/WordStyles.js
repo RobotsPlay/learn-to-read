@@ -9,6 +9,7 @@ const WordStyles = styled.div`
         display: flex;
         justify-content: space-around;
         margin: 1.6rem 0;
+        position: relative;
 
         @media (max-width: 767px) {
             font-size: 6rem;
@@ -30,6 +31,7 @@ const WordStyles = styled.div`
         @media (max-width: 767px) {
             font-size: 6rem;
             width: 8rem;
+            height: 8.4rem;
             border-radius: 1.5rem;
         }
 
@@ -52,6 +54,25 @@ const WordStyles = styled.div`
 
         &.incorrect {
             border-color: red;
+        }
+    }
+
+    .speech-button {
+        position: absolute;
+        top: 0;
+        left: 100%;
+        background: none;
+        border: none;
+        color: rgba(0, 0, 0, .75);
+        cursor: pointer;
+        font-size: 3.2rem;
+
+        * {
+            pointer-events: none;
+        }
+        
+        &:hover {
+            color: #000;
         }
     }
 `;

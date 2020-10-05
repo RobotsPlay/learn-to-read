@@ -6,16 +6,17 @@ const FrameStyles = styled.div`
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: lightgray;
     z-index: 1;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     overflow: hidden;
+    opacity: 0;
 
     &.active {
         z-index: 2;
+        opacity: 1;
     }
 
     .frame-image {
