@@ -31,7 +31,7 @@ const WordStyles = styled.div`
         @media (max-width: 767px) {
             font-size: 6rem;
             width: 8rem;
-            height: 8rem;
+            height: 7.6rem;
             border-radius: 1.5rem;
         }
 
