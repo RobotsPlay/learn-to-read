@@ -16,8 +16,9 @@ const MobileKeyboardStyles = styled.div`
         border-radius: 6px;
         padding: 4px;
         margin: 3px;
-        font-size: 2.4rem;
-        min-width: 3rem;
+        font-size: 2.6rem;
+        min-width: 3.4rem;
+        text-transform: uppercase;
    }
 `;
 

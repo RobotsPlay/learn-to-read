@@ -7,10 +7,10 @@ const MobileKeyboard = ({onPress = (letter) => {}}) => {
         'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r',
         's', 't', 'u', 'v', 'w', 'x', 'y', 'z'
     ];
+    
     const handleClick = (e, letter) => {
         e.target.blur();
         onPress(letter);
-        console.log(letter);
     }    
 
     return (

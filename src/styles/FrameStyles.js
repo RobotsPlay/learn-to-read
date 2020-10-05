@@ -11,8 +11,8 @@ const FrameStyles = styled.div`
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    overflow: hidden;
     opacity: 0;
+    transition: opacity .3s ease-in-out;
 
     &.active {
         z-index: 2;

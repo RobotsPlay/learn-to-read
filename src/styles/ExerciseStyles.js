@@ -6,6 +6,7 @@ const ExerciseStyles = styled.div`
     height: 100%;
     display: grid;
     grid-template-rows: 1fr auto auto;
+    transition: background-color .3s ease-in-out;
 
     .frames {
         position: relative;
