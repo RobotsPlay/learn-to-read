@@ -18,19 +18,18 @@ const WordStyles = styled.div`
     .letter-input {
         border: .6rem dashed rgba(0, 0, 0, .5);
         border-radius: 3.5rem;
-        background: none;
         font-size: 14.2rem;
         text-transform: uppercase;
         text-align: center;
         margin: 0 .6rem;
-        width: auto;
-        max-width: 16rem;
-        transform: translateY(-10px);
+        width: 16rem;
+        height: 15.4rem;
+        transform: translateY(-6px);
         transition: border-color .15s ease-in-out;
 
         @media (max-width: 767px) {
             font-size: 6rem;
-            max-width: 8rem;
+            width: 8rem;
             border-radius: 1.5rem;
         }
 

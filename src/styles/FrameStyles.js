@@ -20,6 +20,7 @@ const FrameStyles = styled.div`
 
     .frame-image {
         width: 40rem;
+        max-height: 30rem;
         max-width: 80%;
         margin-bottom: 8rem;
         pointer-events: none;
@@ -33,6 +34,7 @@ const FrameStyles = styled.div`
         img {
             display: block;
             width: 100%;
+            max-height: 100%;
         }
     }
 `;
