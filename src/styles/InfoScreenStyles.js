@@ -15,6 +15,7 @@ const InfoScreenStyles = styled.div`
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    padding: 10px 40px;
 
     &.show {
         opacity: 1;
