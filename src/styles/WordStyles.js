@@ -25,14 +25,24 @@ const WordStyles = styled.div`
         margin: 0 .6rem;
         width: 16rem;
         height: 15.4rem;
-        transform: translateY(-6px);
+        transform: translateY(.0375em);
         transition: border-color .15s ease-in-out;
+
+        span {
+            transform: translateY(-.075em);
+            display: inline-block;
+        }
 
         @media (max-width: 767px) {
             font-size: 6rem;
             width: 8rem;
             height: 7.6rem;
             border-radius: 1.5rem;
+            transform: translateY(-.0625em);
+
+            span {
+                transform: translateY(-.025em);
+            }
         }
 
         &:first-child {

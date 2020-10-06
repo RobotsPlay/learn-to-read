@@ -31,7 +31,9 @@ const Word = ({
                 {word.split('').map((letter, i) => {
                     return (
                         letter.toUpperCase() === checkLetter.toUpperCase() ? (
-                            <span className={`letter-input ${validClass}`} key={i}>{responseLetter}</span>
+                            <span className={`letter-input ${validClass}`} key={i}>
+                                <span>{responseLetter}</span>
+                            </span>
                         ) : (
                             <span className="letter" key={i}>{letter}</span>
                         )
