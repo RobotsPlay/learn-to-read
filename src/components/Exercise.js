@@ -4,6 +4,7 @@ import Frame from './Frame';
 import {AiTwotoneQuestionCircle, AiFillCheckCircle, AiFillCloseCircle} from 'react-icons/ai'
 import KeyboardEventHandler from 'react-keyboard-event-handler';
 import MobileKeyboard from './MobileKeyboard';
+import { BiLeftArrowAlt, BiRightArrowAlt } from 'react-icons/bi';
 
 const Exercise = ({exerciseData}) => {
     const [currentSlide, setCurrentSlide] = useState(0);
@@ -85,6 +86,10 @@ const Exercise = ({exerciseData}) => {
                 ))} 
             </div>
 
+            <div className="instruction">
+                Type the missing letter.
+            </div>
+
             <MobileKeyboard onPress={onKeyPress} />
 
             <div className="scores">
@@ -100,13 +105,27 @@ const Exercise = ({exerciseData}) => {
             </div>
 
             <div className="controls">
-                <button type="button" onClick={previousSlide} disabled={currentSlide <= 0}>Previous</button>
-                <span>{`${currentSlide + 1} of ${exerciseData.frames.length}`}</span>
-                {isComplete() ? (
-                <button type="button" onClick={onSubmit}>Submit</button>
-                ) : (
-                    <button type="button" onClick={nextSlide}  disabled={currentSlide >= (exerciseData.frames.length - 1)}>Next</button>
-                )}
+                <button className="button" 
+                    type="button" 
+                    onClick={previousSlide} 
+                    disabled={currentSlide <= 0}
+                >
+                    <BiLeftArrowAlt />
+                    {' '} Back
+                </button>
+
+                {1 || isComplete() ? (
+                <button className="button button-finish" type="button" onClick={onSubmit}>Finish!</button>
+                ) : (null)}
+                
+                <button className="button" 
+                    type="button" 
+                    onClick={nextSlide}  
+                    disabled={currentSlide >= (exerciseData.frames.length - 1)}
+                >
+                    Next {' '}
+                    <BiRightArrowAlt />
+                </button>
             </div>
         </ExerciseStyles>
     )

@@ -17,6 +17,7 @@ const ExerciseStyles = styled.div`
         justify-content: space-between;
         align-items: center;
         padding: 2rem;
+        max-width: 800px;
     }
 
     .scores {
@@ -57,6 +58,14 @@ const ExerciseStyles = styled.div`
             color: #990000;
             font-size: 2.4rem;
         }
+    }
+
+    .instruction {
+        margin-bottom: 2rem;
+        font-size: 2rem;
+        font-weight; 700;
+        max-width: 700px;
+        text-align: center;
     }
 `;
 

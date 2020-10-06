@@ -21,14 +21,14 @@ const FrameStyles = styled.div`
 
     .frame-image {
         width: 40rem;
-        max-height: 30rem;
+        max-height: 20rem;
         max-width: 80%;
-        margin-bottom: 8rem;
+        margin-bottom: 6rem;
         pointer-events: none;
 
         @media (max-width: 767px) {
             width: 20rem;
-            margin-bottom: 4rem;
+            margin-bottom: 3rem;
         }
 
 
