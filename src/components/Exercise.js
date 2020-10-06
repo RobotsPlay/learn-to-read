@@ -176,6 +176,17 @@ const Exercise = ({exerciseData}) => {
                 <p>
                     <button className="button button-finish" type="button" onClick={onBegin}>Start</button>
                 </p>
+
+                <p>
+                    <small>
+                        <a href="https://github.com/RobotsPlay/learn-to-read" 
+                            target="_blank"
+                            rel="noopener noreferrer"
+                        >
+                            Take a look at the code.
+                        </a>
+                    </small>
+                </p>
             </InfoScreenStyles>
 
             <InfoScreenStyles className={end ? 'show' : ''}>

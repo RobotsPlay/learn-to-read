@@ -6,6 +6,10 @@ const GlobalStyles = createGlobalStyle`
       box-sizing: border-box;
   }
 
+  a {
+    color: black;
+  }
+
   .button {
     background: lightskyblue;
     border: 3px solid #000;
