@@ -17,7 +17,9 @@ const ExerciseStyles = styled.div`
         justify-content: space-between;
         align-items: center;
         padding: 2rem;
-        max-width: 800px;
+        width: 650px;
+        max-width: 90vw;
+        margin: 0 auto;
     }
 
     .scores {
@@ -61,7 +63,7 @@ const ExerciseStyles = styled.div`
     }
 
     .instruction {
-        margin-bottom: 2rem;
+        margin: 0 auto 2rem;
         font-size: 2rem;
         font-weight; 700;
         max-width: 700px;

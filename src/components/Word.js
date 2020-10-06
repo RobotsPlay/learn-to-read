@@ -14,7 +14,6 @@ const Word = ({
         let synth = window.speechSynthesis;
 
         e.target.blur();
-        console.log(e.target)
 
         if(synth.speaking) {
             return;

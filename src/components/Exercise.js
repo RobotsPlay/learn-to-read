@@ -5,10 +5,14 @@ import {AiTwotoneQuestionCircle, AiFillCheckCircle, AiFillCloseCircle} from 'rea
 import KeyboardEventHandler from 'react-keyboard-event-handler';
 import MobileKeyboard from './MobileKeyboard';
 import { BiLeftArrowAlt, BiRightArrowAlt } from 'react-icons/bi';
+import InfoScreenStyles from '../styles/InfoScreenStyles';
 
 const Exercise = ({exerciseData}) => {
     const [currentSlide, setCurrentSlide] = useState(0);
     const [responses, setResponses] = useState(new Array(exerciseData.frames.length));
+    const [begin, setBegin] = useState(true);
+    const [end, setEnd] = useState(false);
+    const [score, setScore] = useState(0);
 
     const jumpToSlide = (index) => {
         if(index >= 0 && index < exerciseData.frames.length) {
@@ -31,6 +35,19 @@ const Exercise = ({exerciseData}) => {
         e.target.blur();
     }
 
+    const onBegin = (e) => {
+        if(e && e.target) {
+            e.target.blur();
+        }
+
+        setResponses(new Array(exerciseData.frames.length));
+        setCurrentSlide(0);
+        setScore(0);
+
+        setBegin(false);
+        setEnd(false);
+    }
+
     const isComplete = () => {
         let complete = true;
 
@@ -43,8 +60,27 @@ const Exercise = ({exerciseData}) => {
         return complete;
     }
 
-    const onSubmit = () => {
-        console.log('Submitted');
+    const getScore = () => {
+        let newScore = 0;
+
+        responses.forEach((response, i) => {
+            if(response.validClass === 'correct') {
+                newScore++;
+            }
+        });
+
+        setScore(newScore);
+    }
+
+    const onSubmit = (e) => {
+        if(e && e.target) {
+            e.target.blur();
+        }
+
+        getScore();
+
+        setBegin(false);
+        setEnd(true);
     }
 
     const onKeyPress = (key) => {
@@ -114,7 +150,7 @@ const Exercise = ({exerciseData}) => {
                     {' '} Back
                 </button>
 
-                {1 || isComplete() ? (
+                {isComplete() ? (
                 <button className="button button-finish" type="button" onClick={onSubmit}>Finish!</button>
                 ) : (null)}
                 
@@ -127,6 +163,34 @@ const Exercise = ({exerciseData}) => {
                     <BiRightArrowAlt />
                 </button>
             </div>
+
+            <InfoScreenStyles className={begin ? 'show' : ''}>
+                <h1>Learning To Read</h1>
+
+                <p>    
+                    <img src={require(`../assets/images/dog.svg`)} alt={`Illustration of a dog`}/>
+                </p>
+
+                <p>Enter the missing letter to complete the&nbsp;words.</p>
+
+                <p>
+                    <button className="button button-finish" type="button" onClick={onBegin}>Start</button>
+                </p>
+            </InfoScreenStyles>
+
+            <InfoScreenStyles className={end ? 'show' : ''}>
+                <h1>You did it!</h1>
+
+                <p>    
+                    <img src={require(`../assets/images/sun.svg`)} alt={`Illustration of a sun`}/>
+                </p>
+
+                <p>You got {score} of {exerciseData.frames.length} correct.</p>
+
+                <p>
+                    <button className="button button-finish" type="button" onClick={onBegin}>Start Over?</button>
+                </p>    
+            </InfoScreenStyles>
         </ExerciseStyles>
     )
 }
