@@ -13,6 +13,7 @@ const Exercise = ({exerciseData}) => {
     const [begin, setBegin] = useState(true);
     const [end, setEnd] = useState(false);
     const [score, setScore] = useState(0);
+    const [isDraggable, setIsDraggable] = useState(true);
 
     const jumpToSlide = (index) => {
         if(index >= 0 && index < exerciseData.frames.length) {
@@ -39,6 +40,22 @@ const Exercise = ({exerciseData}) => {
         if(e && e.target) {
             e.target.blur();
         }
+
+        setIsDraggable(false);
+        start();
+    }
+
+    const onBeginDrag = (e) => {
+        if(e && e.target) {
+            e.target.blur();
+        }
+
+        setIsDraggable(true);
+        start();
+    }
+
+    const start = () => {
+        
 
         setResponses(new Array(exerciseData.frames.length));
         setCurrentSlide(0);
@@ -118,16 +135,22 @@ const Exercise = ({exerciseData}) => {
                         key={i} 
                         frame={frame}
                         response={responses[currentSlide]}
+                        setLetter={onKeyPress}
+                        isDraggable={isDraggable}
                     />
                 ))} 
             </div>
 
-            <div className="instruction">
-                Type the missing letter.
-            </div>
+            {!isDraggable ? (
+                <>
+                    <div className="instruction">
+                        Type the missing letter.
+                    </div>
 
-            <MobileKeyboard onPress={onKeyPress} />
-
+                    <MobileKeyboard onPress={onKeyPress} />
+                </>
+            ) : null}
+            
             <div className="scores">
                 {exerciseData.frames.map((frame, i) => (
                     <div className={`scores-dot ${responses[i]?.validClass || ''} ${currentSlide === i ? 'active' : ''}`} key={i} onClick={() => jumpToSlide(i)}>
@@ -174,7 +197,8 @@ const Exercise = ({exerciseData}) => {
                 <p>Enter the missing letter to complete the&nbsp;words.</p>
 
                 <p>
-                    <button className="button button-finish" type="button" onClick={onBegin}>Start</button>
+                    <button className="button button-finish" type="button" onClick={onBegin}>Start</button> {' '}
+                    <button className="button button-finish" type="button" onClick={onBeginDrag}>Start w/ Drag and Drop</button>
                 </p>
 
                 <p>
@@ -199,7 +223,8 @@ const Exercise = ({exerciseData}) => {
                 <p>You got {score} of {exerciseData.frames.length} correct.</p>
 
                 <p>
-                    <button className="button button-finish" type="button" onClick={onBegin}>Start Over?</button>
+                    <button className="button button-finish" type="button" onClick={onBegin}>Start Over?</button>{' '}
+                    <button className="button button-finish" type="button" onClick={onBeginDrag}>Start Over w/ Drag and Drop?</button>
                 </p>    
             </InfoScreenStyles>
         </ExerciseStyles>

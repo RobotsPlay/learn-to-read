@@ -7,12 +7,16 @@ const WordStyles = styled.div`
         letter-spacing: .2rem;
         line-height: 1;
         display: flex;
-        justify-content: space-around;
+        justify-content: center;
         margin: 1.6rem 0;
         position: relative;
 
         @media (max-width: 767px) {
             font-size: 6rem;
+        }
+
+        [data-rbd-placeholder-context-id] {
+            position: absolute;
         }
     }
 
@@ -79,7 +83,7 @@ const WordStyles = styled.div`
 
         * {
             pointer-events: none;
-        }
+    
         
         &:hover {
             color: #000;

@@ -38,6 +38,30 @@ const FrameStyles = styled.div`
             max-height: 100%;
         }
     }
+
+    .drag-letters {
+        display: flex;
+        justify-content: center;
+    }
+
+    .drag-letter {
+        display: inline-block;
+        width: 70px;
+        font-size: 6.2rem;
+        text-transform: uppercase;
+        letter-spacing: .2rem;
+        line-height: 1;
+        background: rgba(255, 255, 255, .5);
+        border-radius: 6px;
+        text-align: center;
+        padding-bottom: 6px;
+        margin: 0 12px;
+
+        @media (max-width: 767px) {
+            font-size: 4rem;
+            width: 60px;
+        }
+    }
 `;
 
 export default FrameStyles;

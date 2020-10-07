@@ -1,11 +1,12 @@
 import React from 'react';
+import { Droppable } from 'react-beautiful-dnd';
 import { BsFillVolumeUpFill } from "react-icons/bs";
 import WordStyles from '../styles/WordStyles';
 
 const Word = ({
     word, 
     checkLetter, 
-    responseLetter, 
+    responseLetter,
     validClass = 'incomplete'}) => {
     
     const playWordSound = (e) => {
@@ -26,26 +27,35 @@ const Word = ({
     }
 
     return (
-        <WordStyles>            
-            <div className="word">
-                {word.split('').map((letter, i) => {
-                    return (
-                        letter.toUpperCase() === checkLetter.toUpperCase() ? (
-                            <span className={`letter-input ${validClass}`} key={i}>
-                                <span>{responseLetter}</span>
-                            </span>
-                        ) : (
-                            <span className="letter" key={i}>{letter}</span>
-                        )
-                    )
-                })}
+        <WordStyles>
+            <Droppable droppableId={`drop-letter-${word}`} direction="horizontal">
+                {(provided) => (     
+                     <div className="word"
+                        {...provided.droppableProps} 
+                        ref={provided.innerRef}
+                    >
+                        {word.split('').map((letter, i) => {
+                            return (
+                                letter.toUpperCase() === checkLetter.toUpperCase() ? (
+                                    <span className={`letter-input ${validClass}`} key={i}>
+                                        <span>{responseLetter}</span>
+                                    </span>
+                                ) : (
+                                    <span className="letter" key={i}>{letter}</span>
+                                )
+                            )
+                        })}
 
-                {SpeechSynthesisUtterance ? (
-                    <button className="speech-button" type="button" onClick={playWordSound}>
-                        <BsFillVolumeUpFill />    
-                    </button>
-                ) : null}
-            </div>
+                        {provided.placeholder}
+
+                        {SpeechSynthesisUtterance ? (
+                            <button className="speech-button" type="button" onClick={playWordSound}>
+                                <BsFillVolumeUpFill />    
+                            </button>
+                        ) : null}
+                    </div>
+                )}
+            </Droppable>
         </WordStyles>
     )
 }
