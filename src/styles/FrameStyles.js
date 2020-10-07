@@ -60,6 +60,7 @@ const FrameStyles = styled.div`
         @media (max-width: 767px) {
             font-size: 4rem;
             width: 60px;
+            padding-top: 5px;
         }
     }
 `;
