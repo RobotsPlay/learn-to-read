@@ -223,7 +223,10 @@ const Exercise = ({exerciseData}) => {
                 <p>You got {score} of {exerciseData.frames.length} correct.</p>
 
                 <p>
-                    <button className="button button-finish" type="button" onClick={onBegin}>Start Over?</button>{' '}
+                    <button className="button button-finish" type="button" onClick={onBegin}>Start Over?</button>
+                </p>
+
+                <p>
                     <button className="button button-finish" type="button" onClick={onBeginDrag}>Start Over w/ Drag and Drop?</button>
                 </p>    
             </InfoScreenStyles>
